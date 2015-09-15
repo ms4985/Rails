@@ -54,6 +54,6 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-root to: 'pages#home'
+get "/home" => "pages#home"
 
 end
