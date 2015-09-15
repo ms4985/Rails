@@ -1,0 +1,10 @@
+
+model file for: User
+
+Attributes:
+
+Full Name
+
+Username/Email
+
+Password
