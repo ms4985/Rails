@@ -3,6 +3,9 @@ Rails.application.routes.draw do
 
 
   get "signup" => "users#new", :as => "signup"
+
+  resources :sessions
+
   get "login" => "sessions#new"
   post "login" => "sessions#create"
   get "logout" => "sessions#destroy", :as => "logout"
@@ -62,6 +65,6 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-get "/home" => "pages#home"
+  get "/home" => "pages#home"
 
 end
