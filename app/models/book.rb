@@ -7,6 +7,6 @@ class Book
 
   field :title, type: String
   field :author, type: String
-  field :isbn, type: Int
+  field :isbn, type: Integer
   field :description, type: String
 end
