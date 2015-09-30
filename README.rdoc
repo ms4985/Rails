@@ -24,11 +24,41 @@ Things you may want to cover:
 * ...
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
-
-
 
 meetup.com event: Women Who Code NYC
 		  Full-Day HTML+CSS Workshop for Beginners
 		  October 17th
+
+RAILS MODELS
+
+User
+-Has the same attributes as before, first_name, last_name and email
+-Users read many books
+	user has_many :books
+-Users belong to clubs
+	user embedde_in :clubs
+
+Book
+-Has the attributes title, author, isbn, description
+-Books are read by users
+	Book belongs_to :users
+-Books are located in libraries
+	Book embedded_in :libraries
+-Books are read by clubs
+	Book belongs_to :clubs
+
+Library
+-Has the attributes name, location and id
+-Libraries contain many books
+	Library embeds_many :books
+
+Club
+-Has the attributes id, name, and location
+-Clubs have members that are user
+	Club embeds_many :users
+-Clubs read one book
+	Club has_one :book
+
+
+
+
