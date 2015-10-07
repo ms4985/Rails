@@ -1,3 +1,5 @@
+#encoding: utf-8
+
 namespace :library do 
 	desc 'This rake task will take the Brooklyn Public Library database and populate my database with its data'
 	task :popDB => :environment do
