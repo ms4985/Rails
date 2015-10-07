@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
   resources :users
+  resources :books
+  resources :libraries
+  resources :clubs
 
 
   get "signup" => "users#new", :as => "signup"
+  get "add_book" => "books#new"
 
   resources :sessions
 
