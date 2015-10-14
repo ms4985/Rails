@@ -7,10 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= render "layouts/navbar" %>
+<% if current_user%>
+<%= render "layouts/afternavbar" %>
+<%else%>
+<%= render "layouts/beforenavbar" %>
+<%end%>
 <div class="container">
 <%= yield %>
-
-
+<%= render "layouts/footer" %>
 </body>
 </html>
