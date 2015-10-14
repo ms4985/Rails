@@ -1,9 +1,12 @@
 class Library
   include Mongoid::Document
 
-  embeds_man :books
+  belongs_to :user
 
   field :name, type: String
   field :location, type: String
-  field :id, type: Int
+  field :id, type: Integer
+
+  validates :id, :uniqueness => true
+  validates :location, :presence => { :message => "Library must have a location"}
 end
