@@ -15,5 +15,6 @@
 /db
 
 *.csv
+Rails.git
 
 .gitignore
