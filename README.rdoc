@@ -59,6 +59,7 @@ Club
 -Clubs read one book
 	Club has_one :book
 
-
+Hey! Edited by John Heintschel
+Ruby on Rails Fall 2015
 
 
