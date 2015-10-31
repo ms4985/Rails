@@ -2,7 +2,8 @@ class Book
   include Mongoid::Document
 
   belongs_to :user
-  belongs_to :clubs
+  belongs_to :club
+  belongs_to :library
 
   field :title, type: String
   field :author, type: String

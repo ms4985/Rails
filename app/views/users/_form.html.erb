@@ -1,4 +1,4 @@
-<%= form_for(@user) do |f| %>
+<%= nested_form_for @user do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -21,8 +21,21 @@
   </div>
   <div class="field">
     <%= f.label :email %><br>
-    <%= f.text_field :email %>
+    <%= f.text_field :email %><br><br>
   </div>
+  <%= f.fields_for :books do |book_form| %>
+    <%= book_form.label :book %><br>
+    <%= book_form.label :title %><br>
+    <%= book_form.text_field :title %><br>
+    <%= book_form.label :author %><br>
+    <%= book_form.text_field :author %><br>
+    <%= book_form.label :isbn %><br>
+    <%= book_form.text_field :isbn %><br>
+    <%= book_form.label :description %><br>
+    <%= book_form.text_field :description %><br>
+    <%= book_form.link_to_remove "Remove this book" %>
+  <% end %>
+<p><%= f.link_to_add "Add a book", :books %></p>
   <div class="actions">
     <%= f.submit %>
   </div>

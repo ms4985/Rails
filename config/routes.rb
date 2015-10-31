@@ -6,7 +6,13 @@ Rails.application.routes.draw do
 
 
   get "signup" => "users#new", :as => "signup"
+  get "users/:id" => "users#show"
   get "add_book" => "books#new"
+  get "books" => "books"
+  get "libraries" => "libraries"
+  get "add_library" => "libraries#new"
+  get "clubs" => "clubs"
+  get "add_club" => "clubs#new"
 
   resources :sessions
 
@@ -69,6 +75,6 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  get "/home" => "pages#home"
+  get "/home" => "pages#home", :as => "home"
 
 end

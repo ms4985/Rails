@@ -1,10 +1,12 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
 	<div class="container">
 		<nav>
+			<ul class="nav navbar-nav navbar-left">
+				<%= link_to "Collection App", "home", id:"logo" %>
+			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><%= link_to "login", root_path %> </li>
-				<li><%= link_to "signup", "signup" %> </li>
-				<li><%= link_to "logout", "logout" %> </li>
+				<li><%= link_to "Login", root_path %> </li>
+				<li><%= link_to "Signup", "signup" %> </li>
 			</ul>
 		</nav>
 	</div>

@@ -2,6 +2,10 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   skip_before_filter :require_user, :only => [:create, :new]
 
+  def books
+    @books = @user.books
+  end
+
   # GET /users
   # GET /users.json
   def index
@@ -11,11 +15,13 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @user = User.find(params[:id])
   end
 
   # GET /users/new
   def new
     @user = User.new
+    @user.books.build
   end
 
   # GET /users/1/edit

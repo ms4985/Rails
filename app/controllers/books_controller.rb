@@ -15,7 +15,6 @@ class BooksController < ApplicationController
   # GET /books/new
   def new
     @book = Book.new
-    @book.user_id = :current_user
   end
 
   # GET /books/1/edit
@@ -26,7 +25,7 @@ class BooksController < ApplicationController
   # POST /books.json
   def create
     @book = Book.new(book_params)
-    @book.user_id = :current_user
+    @book.user_id = @current_user._id
 
     respond_to do |format|
       if @book.save

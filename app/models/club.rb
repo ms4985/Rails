@@ -1,12 +1,12 @@
 class Club
   include Mongoid::Document
 
-  embeds_many :users
+  has_many :users
   has_one :book
 
-  field :id, type: Integer
   field :name, type: String
   field :location, type: String
+  field :id, type: Integer
 
-  validates :id, :uniqueness => true
+  validates :name, :uniqueness => true
 end

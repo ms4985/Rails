@@ -2,6 +2,7 @@ class Library
   include Mongoid::Document
 
   belongs_to :user
+  has_many :books
 
   field :name, type: String
   field :location, type: String
